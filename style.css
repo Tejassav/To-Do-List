@@ -1,0 +1,147 @@
+/* General body styling */
+body {
+    background: #e9ecef; /* Light gray background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make sure the body takes up the full height of the viewport */
+    margin: 0;
+}
+
+/* To-do app container */
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h2 {
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Input and button row */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+/* Input field styling */
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Add button styling */
+button {
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* List container styling */
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Checked state for list items */
+ul li.checked {
+    color: #6c757d;
+    text-decoration: line-through;
+}
+
+/* Checkmark on checked list items */
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%23007bff' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47.1 47.1L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+}
+
+/* Close/delete button on list items */
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+ul li span:hover {
+    background: #f2f2f2;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .todo-app {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+    
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    ul li {
+        font-size: 16px;
+    }
+}
